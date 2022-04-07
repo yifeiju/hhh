@@ -1,0 +1,16 @@
+<script>
+    const contadorDeLetras1  = (o11, o22) => {
+        let o1=o11.toLowerCase();
+        let o2=o22.toLowerCase();
+        let index = o1.indexOf(o2)
+        let sum = 0
+        while (index > -1) {
+            index = o1.indexOf(o2, index + 1)
+            sum++
+        }
+        return sum;
+    }
+    let result1= contadorDeLetras1('abaaa','A');
+    console.log(result1)
+    
+</script>

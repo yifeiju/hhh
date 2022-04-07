@@ -1,0 +1,12 @@
+<script>
+   const dice=()=>Math.floor(Math.random() * (7 - 5 + 1)) + 5;
+   const d=dice()
+   console.log(d)
+
+    const name=(nombre)=>{
+        let m=Math.floor(Math.random() * (nombre.length - 1 + 1)) + 1;
+        return nombre.charAt(m-1)
+    }
+    const name1=name('yifeo')
+    console.log(name1)
+</script>

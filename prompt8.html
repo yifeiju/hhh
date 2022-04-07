@@ -1,0 +1,16 @@
+<script>
+while (true) {
+    let nombre=prompt("indroduce tu nombre");
+    if(isNaN(nombre)){
+        let text="Tu nombre introducido es correcta?";
+        if (confirm(text) == true) {
+            alert(nombre);
+            break;
+        }else{
+            alert("repetir tu nombre");
+        }
+    }else{
+        alert("repetir tu nombre");
+    }
+}
+</script>

@@ -1,0 +1,11 @@
+<img src="img/PinguLinux_Yoda.jpg"  id="imagen" width="500px" >
+<script>
+    let i=0;
+	const cambiarImagen = () =>{
+        i++
+    if(i%2==0)document.querySelector('#imagen').src="img/PinguLinux_Ying_Yang.png";
+    else document.querySelector('#imagen').src="img/PinguLinux_Yoda.jpg";
+	}
+	document.querySelector('#imagen').addEventListener('click', cambiarImagen);
+</script>
+

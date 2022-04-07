@@ -1,0 +1,15 @@
+<input type="number" class="r">
+<input type="number" class="r">
+<input type="number" class="r">
+<input type="button" id="btn" value="calcular"><br>
+<output id="g"></output>
+<script>
+    let sum=0;
+    const myFunction=()=>{
+        document.querySelectorAll('input.r').forEach(obj=>{
+            sum+=parseInt(obj.value);
+        })
+        document.querySelector('#g').textContent=sum;
+    }
+    document.querySelector('#btn').addEventListener('click',myFunction)
+</script>

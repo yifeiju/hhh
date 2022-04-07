@@ -1,0 +1,163 @@
+<script>
+//1
+const tata=(ttt)=>ttt.substring(3,7);
+const lll=tata('wonderful day')
+console.log(lll)
+//3
+const devuelveMasLarga=(n1,n2)=>{
+    if (n1.length>n2.length){
+        console.log(n1)
+    }else if (n1.length<n2.length){
+        console.log(n2)
+    }else console.log('')
+}
+devuelveMasLarga('text', 'tet');
+
+//4
+const devuelveMasLarga2=(b1,b2,b3)=>{
+    if (b1.length>b2.length && b1.length>b3.length){
+        console.log(b1); 
+    }else if (b2.length>b1.length && b2.length>b3.length){
+        console.log(b2);
+    }else if(b3.length>b1.length && b3.length>b2.length){
+        console.log(b3)
+    }else return '';
+}
+devuelveMasLarga2('aaaaaaaaaaaaaaa','bbbbbbbbb','cccccccccc')
+
+//5
+const generarNombre=(v1,v2,v3)=>{
+    if (v1.length<= 5 && v2.length<= 5 && v3.length <= 5){
+        console.log(v1.substring(0,3)+v2.substring(0,3)+v3.substring(0,3));
+    }else {
+        console.log('error');
+    }
+    return;
+}
+generarNombre('abaas','bbbabb','cccac')
+
+//6
+const generarNombre2=(z1,z2,z3)=>{
+    if (z1.length<= 5 && z2.length<= 5 && z3.length <= 5){
+        console.log(z1.substring(z1.length-1)+z2.substring(z2.length-1)+z3.substring(z3.length-1));
+    }else {
+        console.log('error');
+    }
+    return;
+}
+generarNombre2('abaas','bbbab','cccac')
+
+//7
+const generarNombre3=(z1,z2,z3)=>{
+    if (z1.length<= 5 && z2.length<= 5 && z3.length <= 5){
+        console.log(z1.substring(z1.length-3,z1.length)+z2.substring(z2.length-3,z2.length)+z3.substring(z3.length-3,z3.length));
+    }else {
+        console.log('error');
+    }
+    return;
+}
+generarNombre3('abaas','bbbab','cccac')
+//8
+const tieneLetra=(x1,x2)=>{
+    if(x1.indexOf(x2)>=0){
+        console.log('ture');
+    }else {
+        console.log('false')
+    }
+}
+tieneLetra('heeh', 'eh')
+
+//9
+const tieneLetra2=(x1,x2)=>{
+    if(x1.toLowerCase().indexOf(x2.toLowerCase())>=0){
+        console.log('ture');
+    }else {
+        console.log('false')
+    }
+}
+tieneLetra2('heeh', 'Eh')
+
+//10
+const addGuiones=(c1)=>{
+    
+        let e = '';
+        for (let c=0; c<c1.length;c++){
+             e+= c1.charAt(c)+'-';
+        }
+    return e;
+    
+}
+const eee= addGuiones('hahaha');
+console.log(eee)
+//11
+const crearpalabra=(letra,numero)=>{
+    let op='';
+    for(let i=1; i<=numero;i++){
+        op+=letra;
+    }
+    return op;
+}
+const kk=crearpalabra('p',7)
+console.log(kk)
+//12
+const crearpalabra1=(letra,numero)=>{
+    let op='';
+    for(let i=1; i<=numero;i++){
+        op+=letra.toUpperCase();
+    }
+    return op;
+}
+const kkk=crearpalabra1('p',7)
+console.log(kkk)
+//13
+const contadorDeLetras  = (g1, g2) => {
+    let sum = 0;
+    for (let i =0; i<=g1.length ;i++) {
+        if( g1.charAt(i) === g2){
+            sum++;
+        }
+    }
+    return sum;
+}
+    let result= contadorDeLetras('abAaababaa','A');
+    console.log(result)
+    
+//14
+const contadorDeLetras1  = (g1, g2) => {
+    let sum = 0;
+    let g11=g1.toLowerCase();
+    let g22=g2.toLowerCase();
+    for (let i =0; i<=g11.length ;i++) {
+        if( g11.charAt(i) === g22){
+            sum++;
+        }
+    }
+    return sum;
+}
+    let result2= contadorDeLetras1('abAababaa','A');
+    console.log(result2)
+//15
+function contadorDeLetras2(word1,word2,letra1){
+    let word11=word1.toLowerCase();
+    let word22=word2.toLowerCase();
+    let letra11=letra1.toLowerCase();
+    let sum=0;
+    for (let i =0; i<=word11.length ;i++) {
+        if( word11.charAt(i) === letra11){
+            sum++;
+        }
+    }
+    let summ=0;
+    for (let ii =0; ii<=word22.length ;ii++) {
+        if( word22.charAt(ii) === letra11){
+            summ++;
+        }
+    }
+    if (sum>summ){
+        console.log(word1)
+    }else if(sum<summ){
+        console.log(word2)
+    }
+}
+contadorDeLetras2('aaaa','abaa','a')
+</script>

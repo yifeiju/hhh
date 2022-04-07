@@ -1,0 +1,44 @@
+<style>
+    .d1{
+        width: 522px;
+        height: 547px;
+        display: inline-block;
+        margin: 0;
+        background: url(PinguLinux_Batman.png);
+    }
+    .d2{
+        width: 522px;
+        height: 547px;
+        display: inline-block;
+        margin: 0;
+        background: url(PinguLinux_Bob_Marley.png);
+    }
+    .d3{
+        width: 522px;
+        height: 547px;
+        display: inline-block;
+        margin: 0;
+        background: url(PinguLinux_Capitan_America.png);
+    }
+</style>
+<input type="button" id="btn" value="pulsa">
+<div style="width: 522px; height: 547px; overflow: hidden;">
+<div id="d4" style="display: inline-block;width: 1574px;height: 547px;padding: 0;margin-right: 0px;transition: 1s;">
+    <div class="d1"></div>
+    <div class="d2"></div>
+    <div class="d3"></div>
+</div>
+</div>
+<script>
+    let i=0;
+    const change=()=>{
+        if(i<2){
+            i++;
+        }else{
+            i=0;
+        }
+        let x=-i*526;
+        document.querySelector('#d4').style.marginLeft=x+'px';
+    }
+    document.querySelector('#btn').addEventListener('click',change)
+</script>

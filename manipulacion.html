@@ -1,0 +1,112 @@
+<script>
+let characters;
+let collectedCharacters = [];
+let collectedCharacters1 = [];
+let collectedCharacters2 = [];
+let collectedCharacters3 = collectedCharacters1;
+let collectedCharacters4 = collectedCharacters2;
+
+// 1
+const getWomansName = () => {
+    const female=characters.filter(obj=>obj.gender=="female").map(value=>value.name)
+    console.log(female)
+}
+//2
+const  getSmallerPeople=()=>{
+    const alto= characters.map(obj=>{
+        return{
+            name:obj.name,
+            height: obj.height-10
+        }
+    })
+    console.log(alto)
+}
+//3
+const sumaDePeso=()=>{
+    const suma = characters.reduce((acc, el) => 'mass' in el ? parseFloat(acc + parseInt(el.mass)) : parseFloat(acc), 0);
+    console.log(suma)
+}
+//4
+const mediaDeAltura=()=>{
+    const media= characters.reduce((acc,el)=>'height' in el ?
+    parseFloat(acc+parseInt(el.height)) : parseFloat(acc), 0)/characters.length;
+    console.log(media)
+}
+//5
+const collectByIndex=(index)=>{
+    const personaje=characters[index];
+    collectedCharacters.push(personaje);
+    console.log(collectedCharacters)
+} 
+//6
+const collectByName=(characterName)=>{
+    const personaje1=characters.find(obj=>obj.name==characterName);
+    collectedCharacters1.push(personaje1)
+    console.log(collectedCharacters1)
+}
+//7
+const removeByName=(characterName)=>{
+    const personaje2=collectedCharacters1.find(obj=>obj.name==characterName);
+    collectedCharacters3=collectedCharacters3.filter(obj=>obj!==personaje2)
+    console.log(collectedCharacters3)
+}
+//8
+const getCharacterFilms=(characterName)=>{
+    const personaje3=characters.find(obj=>obj.name==characterName);
+    console.log(personaje3.films)
+}
+//9
+const collectByName2=(characterName)=>{
+    const personaje22=characters.find(obj=>obj.name==characterName);
+    const personajeencollect=collectedCharacters2.find(characters=>characters.name===characterName)
+
+    if(!personajeencollect){
+        collectedCharacters2.push({ ...
+            personaje22, cantidad:1})
+    }else{
+        personajeencollect.cantidad++;
+    }
+    console.log(collectedCharacters2)
+}
+//10
+const mediaDeAltura2=()=>{
+    const media2= collectedCharacters2.reduce((acc,el)=>'height' in el ?
+    parseFloat(acc+parseInt(el.height)) : parseFloat(acc), 0)/collectedCharacters2.length;
+    console.log(media2)
+}
+//11
+const removeByName2=(characterName)=>{
+    const personaje23=collectedCharacters2.find(obj=>obj.name==characterName);
+    collectedCharacters4=collectedCharacters4.filter(obj=>obj!==personaje23)
+    console.log(collectedCharacters4)
+}
+
+fetch('https://swapi.dev/api/people')
+.then(res => res.json())
+.then(data => {
+   console.log(data);
+   characters = data.results;
+   // Aquí ejecutaremos las llamadas a las funciones que definiremos más arriba
+   getWomansName()
+   getSmallerPeople()
+   sumaDePeso()
+   mediaDeAltura()
+   collectByIndex(1)
+   collectByIndex(2)
+   collectByName("Darth Vader")
+   collectByName("Owen Lars")
+   collectByName("R5-D4")
+   removeByName("Darth Vader")
+   removeByName("Luke Skywalker")
+   removeByName("Owen Lars")
+   getCharacterFilms("Darth Vader")
+   collectByName2("Darth Vader")
+   collectByName2("Owen Lars")
+   collectByName2("Owen Lars")
+   collectByName2("Luke Skywalker")
+   collectByName2("C-3PO")
+   mediaDeAltura2()
+   removeByName2("Owen Lars")
+   removeByName2("Luke Skywalker")
+});
+</script>

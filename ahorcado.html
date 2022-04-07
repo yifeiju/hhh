@@ -1,0 +1,21 @@
+<script>
+    let palabra=['imprimir','escanear','fotocopia','hahaha']
+    let num= Math.floor(Math.random() * (3-0+1)) + 0;
+    let palabraSecreta=palabra[num];
+    let palabraConGuiones = palabraSecreta.replace(/./g, "_ ");
+    alert(palabraConGuiones)
+    String.prototype.replaceAt=function(index, character) { return this.substr(0, index) + character + this.substr(index+character.length); } 
+    let jj=false;
+    while(!jj){
+        let letra=prompt('indrotuce una letra');
+        for(i=0;i<palabraSecreta.length;i++){
+            if(palabraSecreta.charAt(i)==letra){
+                palabraConGuiones = palabraConGuiones.replaceAt(i*2, letra);
+                jj=true;
+            }
+        }
+        if(palabraConGuiones .indexOf("_")==-1){
+            alert('ha ganado')
+        } 
+    }
+</script>

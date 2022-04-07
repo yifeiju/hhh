@@ -1,0 +1,39 @@
+<style>
+    .ahorcado{
+        height: 212px;
+        width: 204.8px;
+        background-image: url(img/hangman-game_pm-1024x212.png);
+    }
+</style>
+<h3>introduzca una letra:</h3> <br>
+<input type="text" maxlength="1" id="letra">
+<input type="button" id="calcular" value="verificar">
+<p id="output"></p>
+<div class="ahorcado"></div>
+<script>
+    String.prototype.replaceAt=function(index, character) { return this.substr(0, index) + character + this.substr(index+character.length); } 
+    const palabras=['ahorcado1','ahorcado2','ahorcado3','ahorcado4','ahorcado5']
+    const palabra=palabras[Math.floor(Math.random() * palabras.length)]
+    let palabraConGuiones = palabra.replace(/./g, "_ ");
+    let contador=0;
+    document.querySelector('#output').innerHTML=palabraConGuiones
+    document.querySelector('#calcular').addEventListener('click',()=>{
+        const letra=document.querySelector('#letra').value;
+        let hafallado=true;
+        for(const i in palabra){
+            if(letra==palabra[i]){
+                palabraConGuiones = palabraConGuiones.replaceAt(i*2, letra);
+            }
+        }
+        if(hafallado){
+            contador++;
+            document.querySelector('.ahorcado').style.backgroundPosition=-(204.8*contador)+'px'
+            if(contador==4){
+                alert('ss')
+            }else{
+                
+            }
+        }
+        document.querySelector('#output').innerHTML=palabraConGuiones;
+    })
+</script>

@@ -1,0 +1,28 @@
+<table>
+    <tr>
+        <td><input type="radio" name="o1"></td>
+        <td>txt2</td>
+        <td>txt3</td>
+    </tr>
+    <tr>
+        <td><input type="radio" name="o1"></td>
+        <td>txt2</td>
+        <td>txt3</td>
+    </tr>
+    <tr>
+        <td><input type="radio" name="o1"></td>
+        <td>txt2</td>
+        <td>txt3</td>
+    </tr>
+</table>
+<script>
+    document.querySelectorAll('tr').forEach(obj=>{
+        obj.addEventListener('click',obj2=>{
+            document.querySelectorAll('tr').forEach(fila=>{
+                fila.style.background='white'
+            })
+            obj.style.background='red';
+            obj.querySelector('input[type=radio]').checked = true;
+        })
+    })
+</script>

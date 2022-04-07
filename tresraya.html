@@ -1,0 +1,38 @@
+<script>
+    const tablero=["_","_","_","_","_","_","_","_","_"]
+    const printBoard = () => {
+       alert(tablero[0] + "|" + tablero[1] + "|" + tablero[2] + "\n" + tablero[3] + "|" + tablero[4] + "|" + tablero[5] + "\n" + tablero[6] + "|" + tablero[7] + "|" + tablero[8]);
+    }
+    let jugador1=true;
+    let haGanadoAlguien=false;
+    function evaluateWin(){
+        if(tablero[0] == tablero[1] && tablero[1] == tablero[2] && tablero[0] !='_'){
+            return true;
+        }else if(tablero[3] == tablero[4] && tablero[4] == tablero[5] && tablero[3] !='_'){ 
+            return true;
+        }else if(tablero[6] == tablero[7] && tablero[7] == tablero[8] && tablero[6] !='_'){
+            return true;
+        }else if(tablero[0] == tablero[3] && tablero[3] == tablero[6] && tablero[0] !='_'){
+            return true;
+        }else if(tablero[1] == tablero[4] && tablero[4] == tablero[7] && tablero[1] !='_'){
+            return true;
+        }else if(tablero[2] == tablero[5] && tablero[5] == tablero[8] && tablero[2] !='_'){
+            return true;
+        }else if(tablero[0] == tablero[4] && tablero[4] == tablero[8] && tablero[0] !='_'){
+            return true;
+        }else if(tablero[2] == tablero[4] && tablero[4] == tablero[6] && tablero[2] !='_'){
+            return true;
+        }
+        return false; 
+    }
+    while(!haGanadoAlguien){
+        printBoard();
+        const posicion=prompt("intro")
+        tablero[posicion]=jugador1 ? 'X':'O';
+        haGanadoAlguien=evaluateWin();
+        if(haGanadoAlguien)alert('win')
+        jugador1=!jugador1;
+    }
+    
+
+</script>

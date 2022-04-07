@@ -1,0 +1,36 @@
+<style>
+    .menu{
+        position: fixed;
+        height: 300px;
+        width: 500px;
+        background-color: yellowgreen;
+        right: -470px;
+        transition: 1s
+    }
+    .red{
+        background-color: red;
+        width: 30px;
+        height: 30px;
+    }
+    .desplega{
+        right:0;
+    }
+    body{
+        margin: 0;
+    }
+</style>
+<div class="menu">
+    <div class="red"></div>
+</div>
+<script>
+    document.querySelector('.red').addEventListener('click',(x) => {
+        x.stopPropagation();
+        document.querySelector('.menu').classList.toggle('desplega');
+    })
+    window.addEventListener('click',(x)=>{
+        const menu = document.querySelector('.menu');
+        if(!menu.contains(x.target)){
+        document.querySelector('.menu').classList.remove('desplega');
+        }
+    })
+</script>

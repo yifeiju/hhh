@@ -1,0 +1,12 @@
+<script>
+    function dnii(dni) {
+        if (!isNaN(dni) && dni.length==8) {
+            let n=dni%23;
+            let m='TRWAGMYFPDXBNJZSQVHLCKE'.charAt(n);
+            console.log('la letra es: '+m)
+        }else{
+            console.log('null');
+        }
+    }
+    dnii(prompt("introduce tu dni sin letra"))
+</script>

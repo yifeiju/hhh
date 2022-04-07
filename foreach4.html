@@ -1,0 +1,27 @@
+    que super heroe es mas fuerte? <br>
+    <div><input type="radio" id="batman" name="heroe" value="batman">
+    <label for="batman">batman</label><br></div>
+    <div><input type="radio" id="superman" name="heroe" value="superman" class="yes">
+    <label for="superman">superman</label><br></div>
+    en que consiste el sentido aracnido de spiderman? <br>
+    <div><input type="radio" id="arañas" name="spiderman" value="arañas">
+    <label for="arañas">puede detectar cuando hay ara&ntilde;as cerca</label><br></div>
+    <div><input type="radio" id="peligro" name="spiderman" value="peligro" class="yes">
+    <label for="peligro">puede detectar cuando hay un peligro cerca</label><br></div>
+    cual es el verdadero numbre de spiderman? <br>
+    <div><input type="radio" id="peter" name="nombre" value="peter" class="yes">
+    <label for="peter">peter parker</label><br></div>
+    <div><input type="radio" id="bruce" name="nombre" value="bruce">
+    <label for="bruce">bruce wayne</label><br></div>
+    <input type="button" id="btn" value="comprobar">
+<script>
+    document.querySelector('#btn').addEventListener('click',()=>{
+        document.querySelectorAll('input[type=radio]:checked').forEach(obj=>{
+            if(obj.classList.contains('yes')){
+                obj.closest('div').style.backgroundColor='green'
+            }else{
+                obj.closest('div').style.backgroundColor='red'
+            }
+        })
+    })
+</script>

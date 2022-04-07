@@ -1,0 +1,15 @@
+<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+<input type="button" value="pulsa" id="btn">
+<div style="width: 300px;height: 300px;background-color: red;"></div>
+<script>
+    const xxx=()=>{
+        document.querySelector('div').classList.add('animate__animated', 'animate__bounce');
+    }
+    document.querySelector('#btn').addEventListener('click',xxx)
+    document.querySelector('div').addEventListener('animationend', () => {
+        document.querySelector('div').classList.remove('animate__animated','animate__bounce');
+});
+</script>

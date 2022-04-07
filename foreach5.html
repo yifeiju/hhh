@@ -1,0 +1,25 @@
+<h3>diseño</h3>
+<div><input type="radio" name="diseño" value="0" checked>el cliente me suministra el diseño</div>
+<div><input type="radio" name="diseño" value="100">yo me encargo del diseño</div>
+<h3>tienda</h3>
+<div><input type="radio" name="tienda" value="0" checked>la pagina no incorpora un carrito de la compra</div>
+<div><input type="radio" name="tienda" value="150">la pagina incorpora un carrito de la compra</div>
+<h3>membership</h3>
+<div><input type="radio" name="member" value="0" checked>la pagina no permite suscripcion</div>
+<div><input type="radio" name="member" value="200">la pagina permite suscripcion</div>
+<div style="width: 300px; height: 200px; background-color: yellowgreen; display: flex; font-size: 5rem; align-items: center; padding-left: 50px;box-sizing: border-box;"><output ></output></div>
+<script>
+    document.querySelectorAll('input[type=radio]').forEach(obj=>{
+        obj.addEventListener('click',()=>{
+           cal(); 
+        })
+    })
+    const cal=()=>{
+        let sum=0;
+            document.querySelectorAll('input[type=radio]:checked').forEach(item=>{
+                sum+=parseInt(item.value);
+            })
+            document.querySelector('output').textContent=sum+'$';
+    }
+    cal()
+</script>

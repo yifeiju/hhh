@@ -1,0 +1,28 @@
+<h3>Motivo</h3>
+<input type="radio" name="motivo" value="Cuento con varios años de experiencia muy sólida como profesional por lo cual me creo capacitad@ para asumir las responsabilidades del puesto que ustedes anuncian.">Cuento con varios años de experiencia muy sólida como profesional por lo cual me creo capacitad@ para asumir las responsabilidades del puesto que ustedes anuncian. <br>
+<input type="radio" name="motivo" value="En relación al anuncio publicado donde solicitaban un profesional para su empresa, les presento mi candidatura.">En relación al anuncio publicado donde solicitaban un profesional para su empresa, les presento mi candidatura. <br>
+<input type="radio" name="motivo" value="El pasado día del mes corriente, se publicó una oferta de trabajo en la que se hacía constar que necesitaban cubrir un puesto de trabajo. ">El pasado día del mes corriente, se publicó una oferta de trabajo en la que se hacía constar que necesitaban cubrir un puesto de trabajo. <br> 
+<h3>Medallas</h3>
+<input type="radio" name="medallas" value="Como he reseñado en el historial adjunto, aunque solo cuento años de experiencia, confío en mi afán de de superación para llegar a poseer un dominio completo de la profesión. Creo contar con las aptitudes necesarias para poder aportar beneficios muy positivos a su organización.">Como he reseñado en el historial adjunto, aunque solo cuento años de experiencia, confío en mi afán de de superación para llegar a poseer un dominio completo de la profesión. Creo contar con las aptitudes necesarias para poder aportar beneficios muy positivos a su organización. <br>
+<input type="radio" name="medallas" value="Debido a mis cualidades personales y mi experiencia, me considero capacitado para desempeñar ese trabajo.">Debido a mis cualidades personales y mi experiencia, me considero capacitado para desempeñar ese trabajo. <br>
+<input type="radio" name="medallas" value="Me adapto con facilidad al trabajo en equipo y baso mi actuación `profesional en una relación duradera y de confianza con la empresa.">Me adapto con facilidad al trabajo en equipo y baso mi actuación `profesional en una relación duradera y de confianza con la empresa. <br>
+<h3>Objetivo</h3>
+<input type="radio" name="objetivo" value="Agradecería la oportunidad de poder presentarme ante ustedes para contestar cualquier pregunta y ampliar lo resumido en mi historial.">Agradecería la oportunidad de poder presentarme ante ustedes para contestar cualquier pregunta y ampliar lo resumido en mi historial. <br>
+<input type="radio" name="objetivo" value="Les agradecería me dejasen formar parte del proceso de selección.">Les agradecería me dejasen formar parte del proceso de selección. <br>
+<input type="radio" name="objetivo" value="Por todo ello espero que tenga en cuenta mi candidatura ante cualquier necesidad futura se ponga en contacto conmigo.">Por todo ello espero que tenga en cuenta mi candidatura ante cualquier necesidad futura se ponga en contacto conmigo.<br>
+<h3>Despedida</h3>
+<input type="radio" name="despedida" value="Un cordial saludo.">Un cordial saludo.<br>
+<input type="radio" name="despedida" value="n espera de sus noticias y sin otro particular.">En espera de sus noticias y sin otro particular.<br>
+<input type="radio" name="despedida" value="Aprovecho la ocasión para agradecerle el interés que ha manifestado por mi candidatura. Atentamente.">Aprovecho la ocasión para agradecerle el interés que ha manifestado por mi candidatura. Atentamente.<br>
+<output></output>
+<script>
+   document.querySelectorAll('input[type=radio]').forEach(obj=>{
+        obj.addEventListener('click',()=>{
+            let text="";
+            document.querySelectorAll('input[type=radio]:checked').forEach(item=>{
+                text+=item.value;
+            })
+            document.querySelector('output').textContent=text;
+        })
+    })
+</script>
