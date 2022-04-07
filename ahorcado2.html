@@ -23,17 +23,22 @@
         for(const i in palabra){
             if(letra==palabra[i]){
                 palabraConGuiones = palabraConGuiones.replaceAt(i*2, letra);
+                hafallado=false;
             }
         }
         if(hafallado){
             contador++;
-            document.querySelector('.ahorcado').style.backgroundPosition=-(204.8*contador)+'px'
+            document.querySelector('.ahorcado').style.backgroundPosition=-(204.8*contador)+'px 0';
             if(contador==4){
-                alert('ss')
-            }else{
-                
+                alert('pertiste')
+            }
+        }else{
+            if (palabraConGuiones.indexOf('_')<0) {
+                alert('has ganado')
             }
         }
         document.querySelector('#output').innerHTML=palabraConGuiones;
+        document.querySelector('#letra').value='';
+        document.querySelector('#letra').focus();
     })
 </script>
